@@ -66,16 +66,18 @@ def occurences(neg_words = negative_words, email = email_three):
  #   Handle punctuation.
   #  Censor words while preserving their length.
 
-censure_list = []
-censure_list = negative_words + proprietary_terms
-def super_censure(censure_list , email = email_four):
-	ponctuation = [",", "!", "?", ".", "%", "/", "(", ")"]
-	i = 0
-	while i < len(email) :
-		print(email[i])
-		i += 1
-				
+censure_listing = []
+censure_listing = negative_words + proprietary_terms
+def super_censure(censure_list = censure_listing, email = email_four):
+    mots_email = []
+    ponctuation = [",", "!", "?", ".", "%", "/", "(", ")"]
+    for word in email.split(" "):  #coupe les mots de l'email sans prendre en compte la poncuation, les sauts de page etc...
+        mots_email.append(word)   #cree une liste avec ces mots
+
+    return mots_email 
+print(super_censure())
 #		
+
 #
 #
 #
